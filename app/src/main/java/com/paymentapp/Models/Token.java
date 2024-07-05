@@ -1,13 +1,22 @@
 package com.paymentapp.Models;
-//import lombok.AllArgsConstructor;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-public class Token {
 
+public class Token {
     private String token;
     private String expireAt;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getExpireAt() {
+        return expireAt;
+    }
+
+    public void setExpireAt(String expireAt) {
+        this.expireAt = expireAt;
+    }
 }

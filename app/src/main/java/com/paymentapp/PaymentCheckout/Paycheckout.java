@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.paymentapp.Helpers.CollectionHelper;
 import com.paymentapp.Models.PaymentRequest;
+import com.paymentapp.Models.SmsRequest;
 import com.paymentapp.R;
 
 import java.math.BigDecimal;
@@ -19,6 +20,9 @@ public class Paycheckout extends AppCompatActivity {
     private final BigDecimal pay = BigDecimal.valueOf(5.00);
     private final String description = "Monthly Subscription";
     private final CollectionHelper collectionHelper = new CollectionHelper();
+    private final String sender = "MyCompany";
+    private final String message = "My Message";
+    private final String recipient = "ContactNumber";
 
 
     @Override
@@ -36,10 +40,10 @@ public class Paycheckout extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 collectionHelper.generateToken(Paycheckout.this);
-                collectionHelper.requestPayment(new PaymentRequest(description,customerFirstName.toString(), customerLastName.toString(), email.toString(),phoneNumber.toString(),pay), Paycheckout.this);
+                collectionHelper.requestPayment(Paycheckout.this, new PaymentRequest(description,customerFirstName.toString(), customerLastName.toString(), email.toString(),phoneNumber.toString(),pay));
                 collectionHelper.getPaymentStatus(Paycheckout.this);
-
-
+                //Trigger This for your sms
+//                collectionHelper.sendSms(Paycheckout.this, new SmsRequest(sender,message,recipient));
             }
         });
         
