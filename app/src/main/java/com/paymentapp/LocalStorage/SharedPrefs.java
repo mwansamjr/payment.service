@@ -22,16 +22,16 @@ public class SharedPrefs {
     }
 
     // Method to save the payment ID
-    public static void saveID(Context context, int id) {
+    public static void saveID(Context context, String id) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_ID, id);
+        editor.putString(KEY_ID, id);
         editor.apply();
     }
     // Method to retrieve the payment ID
-    public static Integer getID(Context context) {
+    public static String  getID(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getInt(KEY_ID, 0);
+        return sharedPreferences.getString(KEY_ID, null);
     }
 
 }
