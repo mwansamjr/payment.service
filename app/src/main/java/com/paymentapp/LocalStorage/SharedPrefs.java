@@ -13,7 +13,7 @@ public class SharedPrefs {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_AUTH_TOKEN, authToken);
-        editor.apply();
+        editor.commit();
     }
     // Method to retrieve the auth token
     public static String getAuthToken(Context context) {
