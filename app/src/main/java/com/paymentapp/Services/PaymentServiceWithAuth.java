@@ -12,11 +12,11 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface PaymentServiceWithAuth {
-    @POST("v1/payment")
+    @POST("api/v1/payment")
     Call<PaymentResponse> requestPayment(@Body PaymentRequest paymentRequest);
 
     @GET("api/v1/payment/{id}")
-    Call<PaymentResponse> getPaymentStatus(@Path("id") int id);
+    Call<PaymentResponse> getPaymentStatus(@Path("id") String id);
 
     @POST("v1/sms/send")
     Call<SmsResponse> sendSms(@Body SmsRequest smsRequest);
