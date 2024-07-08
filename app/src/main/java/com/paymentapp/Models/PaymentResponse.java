@@ -2,20 +2,27 @@ package com.paymentapp.Models;
 
 public class PaymentResponse {
 
-    private PaymentDTO paymentDTO;
+    private Payment payment;
 
     public PaymentResponse() {
     }
 
-    public PaymentResponse(PaymentDTO paymentDTO) {
-        this.paymentDTO = paymentDTO;
+    public PaymentResponse(Payment payment) {
+        this.payment = payment;
     }
 
-    public PaymentDTO getPaymentDTO() {
-        return paymentDTO;
+    public Payment getPayment() {
+        return payment;
     }
 
-    public void setPaymentDTO(PaymentDTO paymentDTO) {
-        this.paymentDTO = paymentDTO;
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
+    @Override
+    public String toString() {
+        return "PaymentResponse{" +
+                "payment=" + payment +
+                '}';
     }
 }
