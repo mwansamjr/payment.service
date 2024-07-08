@@ -1,37 +1,35 @@
 package com.paymentapp.Models;
 
-import java.math.BigDecimal;
-
-public class PaymentDTO {
-
-    private int id;
-    private BigDecimal amount;
+public class Payment {
+    //PaymentDTO
+    private String id;
+    private int amount;
     private String status;
     private String message;
 
-    public PaymentDTO() {
+    public Payment() {
     }
 
-    public PaymentDTO(int id, BigDecimal amount, String status, String message) {
+    public Payment(String id, int amount, String status, String message) {
         this.id = id;
         this.amount = amount;
         this.status = status;
         this.message = message;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public BigDecimal getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -49,5 +47,15 @@ public class PaymentDTO {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "id='" + id + '\'' +
+                ", amount=" + amount +
+                ", status='" + status + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }
